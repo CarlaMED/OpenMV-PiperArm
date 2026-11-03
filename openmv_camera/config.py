@@ -25,10 +25,30 @@ PRINCIPAL_X = 320.0        # principal point X (pixels)
 PRINCIPAL_Y = 240.0        # principal point Y (pixels)
 
 # ── VL53L8CX Time-of-Flight ──────────────────────────────────────────────────
-TOF_GRID_SIZE = 8          # 8×8 zones
-TOF_I2C_BUS = 0            # on-board I2C bus index for the VL53L8CX
-TOF_I2C_ADDR = 0x29        # default I2C address
-TOF_RANGING_FREQ = 15      # Hz
+
+TOF_GRID_SIZE = 8
+TOF_I2C_BUS = 0
+TOF_I2C_ADDR = 0x29
+TOF_RANGING_FREQ = 15
+
+# ── Depth Calibration ───────────────────────
+# TEMPORARY BENCH-TEST VALUES ONLY
+# Do not enable autonomous arm movement until calibrated.
+
+# Sensor distance correction in millimetres
+TOF_OFFSET_MM = 0
+
+# Valid distance range in millimetres
+TOF_MIN_VALID_MM = 100
+TOF_MAX_VALID_MM = 500
+
+# Camera-to-ToF field-of-view mapping
+TOF_FOV_SCALE = 1.0
+
+# ToF grid orientation
+TOF_FLIP_X = False  
+TOF_FLIP_Y = False
+
 
 # ── Button Detection — LAB Colour Thresholds ─────────────────────────────────
 # Each tuple is (L_min, L_max, A_min, A_max, B_min, B_max) in LAB colour space.
@@ -57,6 +77,12 @@ BLOB_MARGIN = 5               # pixel margin around blobs to avoid edge effects
 # ── Template Matching ─────────────────────────────────────────────────────────
 TEMPLATE_DIR = "/templates"
 TEMPLATE_THRESHOLD = 0.60     # NCC threshold (0–1) for a positive match
+
+#carla edit 
+
+TEMPLATE_STEP = 2
+TEMPLATE_ROI = None 
+
 TEMPLATE_SCALE_RANGE = (0.8, 1.2)  # search at 80%–120% of template size
 TEMPLATE_SCALE_STEP = 0.1
 
