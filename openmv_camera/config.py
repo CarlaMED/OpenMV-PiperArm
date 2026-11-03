@@ -24,6 +24,8 @@ FOCAL_LENGTH_PX = 498.0   # PAG7936 nominal focal length in pixels at VGA
 PRINCIPAL_X = 320.0        # principal point X (pixels)
 PRINCIPAL_Y = 240.0        # principal point Y (pixels)
 
+
+#carlaedit
 # ── VL53L8CX Time-of-Flight ──────────────────────────────────────────────────
 
 TOF_GRID_SIZE = 8
